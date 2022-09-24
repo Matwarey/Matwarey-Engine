@@ -70,7 +70,7 @@ echo Loading User Plugins
 ping localhost -n 3 >nul
 :: If you want to load more plugins, copy and paste this below and put your plugin name in it.
 :: A newer system of this will come soon.
-C:\Users\%username%\Downloads\Matwarey-Engine\plugins\main.bat
+C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmdhandler.bat
 
 :: Prevent Save Data Editing
 if %hasPlugins% GTR 1 echo Matwarey Engine detected edited hasPlugins numbers.

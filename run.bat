@@ -1,6 +1,8 @@
 @echo off
 :: Fix it so now it runs and finds saves and configs without issues.
 cd C:\Users\%username%\Downloads\Matwarey-Engine
+:: only for me lol
+if %username%==Matth cd C:\Users\%username%\Documents\GitHub\Matwarey-Engine\
 :: Loads Plugins, Saves Files, & System Commands.
 cmd /c C:\Users\%username%\Downloads\Matwarey-Engine\sys.bat
 pause
