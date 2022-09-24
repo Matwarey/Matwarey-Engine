@@ -1,3 +1,3 @@
 @echo off
 cls
-C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\promptwindow.bat
+C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\promptwindow.bat

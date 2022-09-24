@@ -25,4 +25,4 @@ echo %EnabledDevMode%
 echo %EnabledDataStreamLogs%
 echo.
 pause
-C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\promptwindow.bat
+C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\promptwindow.bat

@@ -45,7 +45,7 @@ goto loadprompt
 
 :loadprompt
 echo Loaded Prompt!
-start C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\promptwindow.bat
+start C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\promptwindow.bat
 ping localhost -n 1 >nul
 echo Press R here to reload the prompt anytime.
 echo Press Q to quit the app.

@@ -25,14 +25,14 @@ set dataEnabled=1
 set cmd=0
 set /p cmd=#:
 
-if %cmd%==cts if %ctsEnabled%==1 C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\cts.bat
+if %cmd%==cts if %ctsEnabled%==1 C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\cts.bat
 if %cmd%==cts if %ctsEnabled%==0 goto ctsDisabled
-if %cmd%==reset if %resetEnabled%==1 C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\reset.bat
+if %cmd%==reset if %resetEnabled%==1 C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\reset.bat
 if %cmd%==reset if %resetEnabled%==0 goto resetDisabled
-if %cmd%==data if %dataEnabled%==1 C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\data.bat
+if %cmd%==data if %dataEnabled%==1 C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\data.bat
 if %cmd%==data if %dataEnabled%==0 goto dataDisabled
-if %cmd%==help C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\help.bat
-if %cmd%==? C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\help.bat
+if %cmd%==help C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\help.bat
+if %cmd%==? C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\help.bat
 if %cmd%==0 goto CMDInput
 
 :invaildCommand
