@@ -7,8 +7,8 @@ goto sysplug2
 
 :sysplug2
 :: Set Data Values
-set firstTimeUse=1
-set savedData=1
+set firstTimeUse=0
+set savedData=0
 set setupBefore=0
 set hasPlugins=0
 set EnableDevMode=0
@@ -20,7 +20,6 @@ goto sysplug3
 if exist save.sav (
      echo Loaded Data!
 	 goto loadSave
-	 set setupBefore=1
 ) else (
     echo Save file doesn't exist, creating save file
 	goto createSave
@@ -35,7 +34,7 @@ echo %hasPlugins%
 goto loadSave
 
 :loadSave
-if exist save.sav (
+(
 set /p firstTimeUse=
 set /p savedData=
 set /p setupBefore=

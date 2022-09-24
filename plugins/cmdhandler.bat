@@ -1,8 +1,6 @@
 echo Loading Plugin Command Handler
 
 set hasPlugins=1
-set cmd=null
-if %EnableDevMode%==1 echo Dev Mode Is Enabled!
 
 echo Setting up Command Handler
 cd C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\
@@ -10,9 +8,33 @@ cd C:\Users\%username%\Downloads\Matwarey-Engine\plugins\cmds\
 ping localhost -n 1 >nul
 echo Loading Commands
 if exist cts.bat (
-  echo cts.mat exist!
+  echo cts.bat exist!
 ) else (
-  echo Internal Error when loading the Plugin, "cts.mat"
+  echo Internal Error when loading the Plugin, "cts.bat"
+  echo Maybe it doesn't exist?
+  ping localhost -n 3 >nul
+  goto failed
+)
+if exist reset.bat (
+  echo reset.bat exist!
+) else (
+  echo Internal Error when loading the Plugin, "reset.bat"
+  echo Maybe it doesn't exist?
+  ping localhost -n 3 >nul
+  goto failed
+)
+if exist data.bat (
+  echo data.bat exist!
+) else (
+  echo Internal Error when loading the Plugin, "data.bat"
+  echo Maybe it doesn't exist?
+  ping localhost -n 3 >nul
+  goto failed
+)
+if exist promptwindow.bat (
+  echo promptwindow.bat exist!
+) else (
+  echo Internal Error when loading the Plugin, "promptwindow.bat"
   echo Maybe it doesn't exist?
   ping localhost -n 3 >nul
   goto failed
@@ -23,12 +45,16 @@ goto loadprompt
 
 :loadprompt
 echo Loaded Prompt!
-C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\promptwindow.bat
+start C:\Users\Matth\Downloads\Matwarey-Engine\plugins\cmds\promptwindow.bat
 ping localhost -n 1 >nul
 echo Press R here to reload the prompt anytime.
+echo Press Q to quit the app.
+choice /c RQ >nul
+
+if %errorlevel% equ 1 loadprompt
+if %errorlevel% equ 2 exit
 
 :failed
-echo One of your Plugins has failed to load!
 echo Please try again by fixing the error or
 echo reinstalling the plugin and trying again!
 ping localhost -n 5 >nul
