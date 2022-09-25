@@ -1,5 +1,4 @@
 echo Loading Plugin Command Handler
-
 set hasPlugins=1
 
 echo Setting up Command Handler
@@ -39,6 +38,22 @@ if exist promptwindow.bat (
   ping localhost -n 3 >nul
   goto failed
 )
+if exist help.bat (
+  echo help.bat exist!
+) else (
+  echo Internal Error when loading the Plugin, "help.bat"
+  echo Maybe it doesn't exist?
+  ping localhost -n 3 >nul
+  goto failed
+)
+if exist config.json (
+  echo config.json exist!
+) else (
+  echo Internal Error when loading the Plugin, "config.json"
+  echo Maybe it doesn't exist?
+  ping localhost -n 3 >nul
+  goto failed
+)
 ping localhost -n 2 >nul
 echo Loaded Successfully!
 goto loadprompt
@@ -51,7 +66,7 @@ echo Press R here to reload the prompt anytime.
 echo Press Q to quit the app.
 choice /c RQ >nul
 
-if %errorlevel% equ 1 loadprompt
+if %errorlevel% equ 1 goto loadprompt
 if %errorlevel% equ 2 exit
 
 :failed

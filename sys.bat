@@ -63,6 +63,7 @@ if %EnableDevMode%==1 echo Dev Mode Enabled!
 if %EnabledDataStreamLogs%==0 echo Data Stream Logs Disabled.
 if %EnableDevMode%==0 echo Dev Mode Disabled.
 echo System Plugins and Save Data has loaded!
+title Matwarey Engine
 
 :loadPlugins
 echo Loading User Plugins
