@@ -30,6 +30,14 @@ if exist data.bat (
   ping localhost -n 3 >nul
   goto failed
 )
+if exist reload.bat (
+  echo reload.bat exist!
+) else (
+  echo Internal Error when loading the Plugin, "reload.bat"
+  echo Maybe it doesn't exist?
+  ping localhost -n 3 >nul
+  goto failed
+)
 if exist promptwindow.bat (
   echo promptwindow.bat exist!
 ) else (
